@@ -1,3 +1,7 @@
+# JVM Architecture
+
+<img src="media/jvm-architecture.svg" alt="JVM Architecture"/>
+
 # Classloader 
 
 It's responsibile for loading, linking and initialization
@@ -70,7 +74,27 @@ In the delegation-hierarchy the Bootstrap Class Loader will try to find the clas
 - Shared resource
 
 ## Stack Memory
+- One runtime stack for ever thread is store here
+- Every block of stack (activation record / stack frame) stores method calls
+- Runtime stack will be destroyed after thread is terminated
+- Not a shared resource
 
 ## PC Registers
+- Stores address of current execution instruction of thread
+- Each thread have separate PC Registers
 
 ## Native Method Stacks
+- Stores native method information
+- Separate native stack for every thread
+
+# Execution Engine
+- Execution engine is the one who executes the bytecode
+- Classified in 3 parts (Interpreter, Just In Time Compiler, Gargage Collector)
+
+## Interpreter
+- Interprets byte code line by line and executess
+- Disavantage - If a method is called multiple times, it will be interpreted multiple times
+
+## JIT Compiler
+- Increases efficiency of interpreter
+- JIT provides direct native code to avoid reinterpretation
