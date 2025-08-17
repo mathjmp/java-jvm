@@ -98,3 +98,12 @@ In the delegation-hierarchy the Bootstrap Class Loader will try to find the clas
 ## JIT Compiler
 - Increases efficiency of interpreter
 - JIT provides direct native code to avoid reinterpretation
+
+## Garbage Collector
+- Objects that are not used in memory are removed
+
+# Java Native Interface (JNI)
+- Interface interacts with native method libraries
+
+# Native Method Libraries
+- Collection of native libraries (C, C++) which are required by the Execution Engine
